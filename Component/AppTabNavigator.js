@@ -10,7 +10,7 @@ export const AppTabNavigator = createBottomTabNavigator({
     Goals:{
         screen:GoalsScreen,
         navigationOptions:{
-            tabBarIcon:<Image source={require("../assets/favicon.png")} style= {{width:20,height:20}} />,
+            tabBarIcon:<Image source={require("../assets/goals.png")} style= {{width:70,height:30,}} />,
             tabBarLabel:"Goals"
         }
     },
@@ -18,21 +18,21 @@ export const AppTabNavigator = createBottomTabNavigator({
     Task:{
         screen:TaskScreen,
         navigationOptions:{
-            tabBarIcon:<Image source={require("../assets/favicon.png")} style= {{width:20,height:20}} />,
+            tabBarIcon:<Image source={require("../assets/Tasks.jpg")} style= {{width:70,height:30}} />,
             tabBarLabel:"Task"
         }
     },
     Timer:{
         screen:TimerScreen,
         navigationOptions:{
-            tabBarIcon:<Image source={require("../assets/favicon.png")} style= {{width:20,height:20}} />,
+            tabBarIcon:<Image source={require("../assets/timer.jpg")} style= {{width:70,height:30}} />,
             tabBarLabel:"Timer"
         }
     },
    WorkDone: {
         screen:WorkDoneScreen,
         navigationOptions:{
-            tabBarIcon:<Image source={require("../assets/favicon.png")} style= {{width:20,height:20}} />,
+            tabBarIcon:<Image source={require("../assets/WorkDone.jpg")} style= {{width:70,height:30}} />,
             tabBarLabel:"WorkDone"
         }
     }
