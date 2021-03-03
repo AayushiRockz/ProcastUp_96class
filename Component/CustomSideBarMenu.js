@@ -18,7 +18,7 @@ export default class CustomSideBarMenu extends Component {
               this.props.navigation.navigate('Welcome')
             }}
           >
-            <Text>Log Out</Text>
+            <Text style={styles.buttonText}>Log Out</Text>
           </TouchableOpacity>
 
         </View>
@@ -29,10 +29,22 @@ export default class CustomSideBarMenu extends Component {
 
 const styles = StyleSheet.create({
   button:{
-    height:30,
-    width:'80%',
+    height:50,
+    width:'60%',
     padding:10,
-    justifyContent:'center'
+    justifyContent:'center',
+    backgroundColor:'#002365',
+    borderWidth:2,
+    borderRadius:50,
+    borderColor:'#59FFFF',
+    shadowOffset:{width:2,height:5} ,   
+       shadowOpacity:4,
+       shadowRadius:20,
+  },
+  buttonText:{
+    color:'#59FFFF',
+    fontFamily:'fantasy',
+    fontSize:25
   },
   logOutContainer:{
     flex:0.2,

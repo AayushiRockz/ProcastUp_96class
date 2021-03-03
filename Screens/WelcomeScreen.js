@@ -37,7 +37,7 @@ export default class WelcomeScreen extends Component {
             contact: this.state.contact,
             email_id: this.state.emailId,
             address: this.state.address,
-            IsBookRequestActive: false
+          
           });
           return Alert.alert("User Added Successfully", "", [
             {
@@ -60,7 +60,7 @@ export default class WelcomeScreen extends Component {
       .auth()
       .signInWithEmailAndPassword(emailId, password)
       .then(() => {
-        this.props.navigation.navigate("DonateBooks");
+        this.props.navigation.navigate("Goals");
       })
       .catch(error => {
         var errorCode = error.code;
