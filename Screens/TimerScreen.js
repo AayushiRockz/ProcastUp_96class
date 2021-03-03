@@ -147,13 +147,13 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#07121B",
+      backgroundColor: "#032248",
       alignItems: "center",
       justifyContent: "center"
     },
     button: {
       borderWidth: 10,
-      borderColor: "#89AAFF",
+      borderColor: "#59FFFF",
       width: screen.width / 2,
       height: screen.width / 2,
       borderRadius: screen.width / 2,

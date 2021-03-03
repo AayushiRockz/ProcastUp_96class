@@ -1,9 +1,10 @@
 import React , {Component} from 'react';
-import {View,Text, TextInput, TouchableOpacity, Image, StyleSheet, FlatList} from 'react-native';
+import {View,Text, TextInput, TouchableOpacity,  StyleSheet, FlatList} from 'react-native';
 import {ListItem} from 'react-native-elements';
 import MyHeader from '../Component/MyHeader';
 import firebase from 'firebase';
 import db from '../config';
+import { Icon } from 'react-native-elements';
 
 export default class GoalsScreen extends Component{
     constructor(){
@@ -17,7 +18,7 @@ export default class GoalsScreen extends Component{
     }
 
     
-  addGoals = async (goals) => {
+  addGoals = async (goal) => {
      var userId = this.state.userId;
   
      db.collection("goals").add({
@@ -63,6 +64,7 @@ export default class GoalsScreen extends Component{
          key={i}
          title={item.goal}       
          titleStyle={{ color: "black", fontWeight: "bold" , fontSize:20 }}
+         leftComponent={<Icon name="square-o" type="font-awesome"  />}
          bottomDivider
      />
     );

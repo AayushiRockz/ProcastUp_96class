@@ -10,6 +10,7 @@ export default class MyHeader extends Component{
                 <Header
                 centerComponent={{text:this.props.title, style:{color:"#BAC2FF", fontSize:20, fontFamily:'serif' , alignSelf:'flex-start'}}}
                 backgroundColor="#2B2CFF"
+                
                 />
 
             </SafeAreaProvider>   

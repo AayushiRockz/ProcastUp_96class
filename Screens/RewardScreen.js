@@ -7,7 +7,7 @@ export default class RewardScreen extends Component{
         return(
 
             <View>
-               <MyHeader titlr="Rewards"/>
+              <MyHeader title="Rewards"/>
             </View>
         )
     }
