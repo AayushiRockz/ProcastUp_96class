@@ -1,9 +1,9 @@
 import React , {Component} from 'react';
-import {View,Text,TouchableOpacity, StyleSheet, Modal, ScrollView, KeyboardAvoidingView, TextInput, Alert} from 'react-native';
+import {View,Text,TouchableOpacity, StyleSheet, Modal, ScrollView, KeyboardAvoidingView, TextInput, Alert, Touchable} from 'react-native';
 import AppHeader from '../Component/AppHeader';
 import MyHeader from '../Component/MyHeader';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import { SafeAreaView } from 'react-navigation';
+
 import firebase from 'firebase';
 import db from '../config';
 
@@ -23,7 +23,7 @@ export default class WelcomeScreen extends Component {
         };
       }
     
-  userSignUp = (emailId, password, confirmPassword) => {
+  userSignUp =(emailId, password, confirmPassword)=>{
     if (password !== confirmPassword) {
       return Alert.alert("password doesn't match\nCheck your password.");
     } else {
@@ -171,23 +171,25 @@ export default class WelcomeScreen extends Component {
             <TouchableOpacity
               style={styles.registerButton}
               onPress={() =>
-                this.userSignUp(
-                  this.state.emailId,
-                  this.state.password,
-                  this.state.confirmPassword
-                )
+                this.userSignUp=()=>{
+                  (
+                    this.state.emailId,
+                    this.state.password,
+                    this.state.confirmPassword
+                  )
+                }
               }
             >
               <Text style={styles.registerButtonText}>Register</Text>
             </TouchableOpacity>
-            <Text
+            <TouchableOpacity
               style={styles.cancelButtonText}
               onPress={() => {
                 this.setState({ isModalVisible: false });
               }}
             >
               Cancel
-            </Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </Modal>

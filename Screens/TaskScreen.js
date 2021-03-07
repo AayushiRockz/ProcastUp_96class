@@ -88,14 +88,14 @@ export default class TaskScreen extends Component{
                 </View>
             )
             :(
-                <View>  
+              
                   <FlatList
                   keyExtractor={this.keyExtractor}
                   data={this.state.taskList}
                   renderItem={this.renderItem}
                   />
 
-                  </View>
+                
             )
             }
 

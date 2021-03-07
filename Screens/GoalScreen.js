@@ -85,14 +85,14 @@ export default class GoalsScreen extends Component{
                 </View>
             )
             :(
-                <View>  
+               
                   <FlatList
                   keyExtractor={this.keyExtractor}
                   data={this.state.goalList}
                   renderItem={this.renderItem}
                   />
 
-                  </View>
+                
             )
             }
 
