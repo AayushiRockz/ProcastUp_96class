@@ -5,6 +5,7 @@ import MyHeader from '../Component/MyHeader';
 import firebase from 'firebase';
 import db from '../config';
 import { Icon } from 'react-native-elements';
+import SwipeableGoalList from '../Component/SwipeableGoalList';
 
 export default class GoalsScreen extends Component{
     constructor(){
@@ -24,6 +25,7 @@ export default class GoalsScreen extends Component{
      db.collection("goals").add({
        "user_id": userId,
        'goal':this.state.goal,
+       "goal_status":"incomplete"
    
       
      });
@@ -62,9 +64,9 @@ export default class GoalsScreen extends Component{
      return (
        <ListItem
          key={i}
-         title={item.goal}       
+         leftElement={<Icon name="square-o" type="font-awesome"  />}
+         title={item.goalList}       
          titleStyle={{ color: "black", fontWeight: "bold" , fontSize:20 }}
-         leftComponent={<Icon name="square-o" type="font-awesome"  />}
          bottomDivider
      />
     );
@@ -86,11 +88,7 @@ export default class GoalsScreen extends Component{
             )
             :(
                
-                  <FlatList
-                  keyExtractor={this.keyExtractor}
-                  data={this.state.goalList}
-                  renderItem={this.renderItem}
-                  />
+               <SwipeableGoalList goals={this.state.goalList}/>
 
                 
             )
@@ -103,7 +101,7 @@ export default class GoalsScreen extends Component{
                             value={this.state.goal}
                     />
                     <TouchableOpacity style={styles.button}
-                    onPress={()=>{this.addGoals(this.goalList)}}
+                    onPress={()=>{this.addGoals(this.state.goal)}}
                     >
                         <Text style={{color:'cyan'}}>Submit</Text>
                     </TouchableOpacity>

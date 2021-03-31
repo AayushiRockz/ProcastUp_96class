@@ -93,7 +93,7 @@ export default class CustomSideBarMenu extends Component {
             source={{
               uri: this.state.image,
             }}
-            size={"xlarge"}
+            size={"large"}
             onPress={() => this.selectPicture()}
             showEditButton
           />

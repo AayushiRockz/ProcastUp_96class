@@ -9,6 +9,7 @@ import {ListItem} from 'react-native-elements';
 import MyHeader from '../Component/MyHeader';
 import firebase from 'firebase';
 import db from '../config';
+import SwipeableTaskList from '../Component/SwipeableTaskList';
 
 export default class TaskScreen extends Component{
     constructor(){
@@ -88,12 +89,7 @@ export default class TaskScreen extends Component{
                 </View>
             )
             :(
-              
-                  <FlatList
-                  keyExtractor={this.keyExtractor}
-                  data={this.state.taskList}
-                  renderItem={this.renderItem}
-                  />
+              <SwipeableTaskList tasks={this.state.taskList}/>
 
                 
             )
